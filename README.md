@@ -7,7 +7,7 @@
 </p>
 <h4 align="center">
     <a href="https://evershop.io/docs/development/getting-started/introduction">Documentation</a> |
-    <a href="https://demo.evershop.io/">Demo</a>
+    <a href="https://demo.evershop.io/">Demoooo</a>
 </h4>
 
 <p align="center">
