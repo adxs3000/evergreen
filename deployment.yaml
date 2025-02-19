@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: evershop-deployment
+spec:
+  replicas: 1  # You can adjust this based on how many instances you want
+  selector:
+    matchLabels:
+      app: evershop
+  template:
+    metadata:
+      labels:
+        app: evershop
+    spec:
+      containers:
+      - name: evershop
+        image: archit3000/evershop:latest
+        ports:
+        - containerPort: 3000  # Adjust based on your app's port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: evershop-service
+spec:
+  selector:
+    app: evershop
+  ports:
+    - protocol: TCP
+      port: 80  # Exposing port 80
+      targetPort: 3000  # Adjust based on your app's port
+  type: LoadBalancer  # This is for Minikube, it will expose it externally
+
